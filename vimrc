@@ -89,13 +89,20 @@ call plug#end()
 colorscheme nord
 " status line color
 let g:lightline = {'colorscheme': 'nord'}
+
 " indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>:set nu rnu<CR>
+
 " confirm completion with `<leader>,`
 inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 " navigate the completion list
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+let g:coc_global_extensions = [
+    \ 'coc-clangd'
+    \ ]
