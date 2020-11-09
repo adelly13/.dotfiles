@@ -3,5 +3,12 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
 
-
+- shell:
+    - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)", Installs brew]
+    - [git submodule update --init --recursive, Installing submodules]
+    - [chsh -s $(which zsh) && zsh, Making zsh the default shell]
+    - [touch .hushlogin, Getting rid of login message]
+    - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing Oh My Zsh]
+    - [git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k, Installing powerlevel10k]
