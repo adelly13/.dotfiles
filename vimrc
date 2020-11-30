@@ -86,23 +86,28 @@ Plug 'itchyny/lightline.vim' " bottom status line
 Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
+" ------------------
+" Plugin Preferences
+" ------------------
 colorscheme nord
 " status line color
 let g:lightline = {'colorscheme': 'nord'}
-
 " indent guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>:set nu rnu<CR>
-
 " confirm completion with `<leader>,`
 inoremap <expr> <leader>, pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
 " navigate the completion list
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-
+" coc language servers and other extensions
 let g:coc_global_extensions = [
     \ 'coc-clangd'
     \ ]
+
+" ---------
+" Languages
+" --------
+autocmd filetype cpp nnoremap <C-e> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
