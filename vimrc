@@ -104,7 +104,10 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " coc language servers and other extensions
 let g:coc_global_extensions = [
-    \ 'coc-clangd'
+    \ 'coc-clangd',
+    \ 'coc-html',
+    \ 'coc-json',
+    \ 'coc-css',
     \ ]
 
 " ---------
